@@ -1,8 +1,8 @@
 const { admin } = require("../firebase");
 
 const validateToken = async (req, res, next) => {
-  const authToken = req.headers.authorization;
-
+  const authToken = req.headers.authorization.split(" ")[1];
+    console.log(authToken)
   if (!authToken) {
     return res.status(401).json({ error: "Unauthorized: No token provided" });
   }
@@ -16,3 +16,5 @@ const validateToken = async (req, res, next) => {
     res.status(401).json({ error: "Unauthorized: Invalid token" });
   }
 };
+
+module.exports = validateToken;

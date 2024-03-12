@@ -48,7 +48,7 @@ const registerUser = async (req, res) => {
 //@route POST /api/users/signup
 const login = async (req, res) => {
   const idToken = req.headers.authorization.split(" ")[1];
-
+  console.log(idToken);
   try {
     // Verify the ID token sent by the client
     const decodedToken = await admin.auth().verifyIdToken(idToken);

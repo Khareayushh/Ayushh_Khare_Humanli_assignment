@@ -6,8 +6,7 @@ try {
   // Initialize Firebase
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
-    databaseURL:
-      "https://console.firebase.google.com/project/twitterclone-d45ec/database/twitterclone-d45ec-default-rtdb/data/~2F",
+    databaseURL: "https://twitterclone-d45ec-default-rtdb.firebaseio.com",
   });
   // const app = initializeApp(firebaseConfig);
   db = admin.firestore();
